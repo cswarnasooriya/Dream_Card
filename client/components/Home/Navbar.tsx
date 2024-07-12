@@ -2,6 +2,8 @@ import { navLinks } from '@/constants/Constants'
 import Image from 'next/image'
 import Link from 'next/link'
 import React from 'react'
+import { BiUser, BiWallet } from 'react-icons/bi'
+import { FaBars } from 'react-icons/fa'
 
 const Navbar = () => {
   return (
@@ -29,6 +31,14 @@ const Navbar = () => {
             </div>
 
             {/* icons */}
+
+            <div className="flex items-center space-x-8">
+                
+                <BiWallet className="w-6 h-6 cursor-pointer hover:text-red-600" />
+                <BiUser className="w-6 h-6 cursor-pointer hover:text-red-600" />
+                <FaBars className="w-6 h-6 cursor-pointer hover:text-red-600 lg:hidden" />
+
+            </div>
 
         </div>
       
