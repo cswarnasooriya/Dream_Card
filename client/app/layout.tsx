@@ -26,7 +26,9 @@ export default function RootLayout({
 
         {/*Here display any page of web aplication */}
 
-        {children}</body>
+        {children}
+        
+      </body>
     </html>
   );
 }
