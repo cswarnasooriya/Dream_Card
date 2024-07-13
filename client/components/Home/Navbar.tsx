@@ -5,7 +5,11 @@ import React from 'react'
 import { BiUser, BiWallet } from 'react-icons/bi'
 import { FaBars } from 'react-icons/fa'
 
-const Navbar = () => {
+type props = {
+    openNav:()=>void
+}
+
+const Navbar = ({openNav}:props) => {
   return (
     <div className="w-full h-[13vh]">
         <div className="w-[95%] sm:w-[85%] md:w-[80%] h-full mx-auto flex items-center justify-between">
@@ -21,7 +25,7 @@ const Navbar = () => {
                 {navLinks.map((link) => {
                     return(
                         <Link href={link.url} key={link.id}>
-                            <p className="text-lg font-semibold cursor-pointer hover:text-blue-800 transition-all duration-200 text-gray-900">
+                            <p className="text-md font-semibold cursor-pointer hover:text-blue-800 transition-all duration-200 text-gray-900">
                                 {link.label}
                             </p>
                         </Link>
@@ -36,7 +40,7 @@ const Navbar = () => {
                 
                 <BiWallet className="w-6 h-6 cursor-pointer hover:text-red-600" />
                 <BiUser className="w-6 h-6 cursor-pointer hover:text-red-600" />
-                <FaBars className="w-6 h-6 cursor-pointer hover:text-red-600 lg:hidden" />
+                <FaBars onClick={openNav} className="w-6 h-6 cursor-pointer hover:text-red-600 lg:hidden" />
 
             </div>
 
